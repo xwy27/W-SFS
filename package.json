@@ -1,0 +1,31 @@
+{
+  "name": "web-client",
+  "version": "1.0.0",
+  "description": "Web client for w-ftp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w-ftp/web-client.git"
+  },
+  "keywords": [
+    "Web",
+    "FTP",
+    "Koa2"
+  ],
+  "author": "xwy27",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w-ftp/web-client/issues"
+  },
+  "homepage": "https://github.com/w-ftp/web-client#readme",
+  "dependencies": {
+    "koa": "2.0.0",
+    "koa-router": "7.0.0",
+    "nunjucks": "2.4.2",
+    "koa2-static-middleware": "^1.0.3"
+  }
+}
