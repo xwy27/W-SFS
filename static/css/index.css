@@ -32,10 +32,6 @@ table thead tr th {
   font-size: 1.5em;
 }
 
-table thead tr:first-child {
-  font-size: 2em;
-}
-
 table tbody tr td:first-child {
   font-size: 1.5em;
 }

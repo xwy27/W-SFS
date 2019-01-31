@@ -1,37 +1,13 @@
+const fs = require('fs');
 const Koa = require('koa');
 const router = require('koa-router')();
 const serve = require('koa2-static-middleware');
-const nunjucks = require('nunjucks');
 
-/**
- * 
- * @param {string} path:  filePath for html template 
- * @param {object} opts:  options for nunjucks environment
- */
-function createEnv(path, opts) {
-  let
-    autoescape = opts.autoescape === undefined ? true : opts.autoescape,
-    noCache = opts.noCache || false,
-    watch = opts.watch || false,
-    throwOnUndefined = opts.throwOnUndefined || false,
-    env = new nunjucks.Environment(
-      new nunjucks.FileSystemLoader(path, {
-        noCache: noCache,
-        watch: watch,
-      }), {
-        autoescape: autoescape,
-        throwOnUndefined: throwOnUndefined
-      });
-  if (opts.filters) {
-    for (var f in opts.filters) {
-      env.addFilter(f, opts.filters[f]);
-    }
-  }
-  return env;
-}
+const logger = require('./middleware/logger');
+const template = require('./middleware/templating');
 
-// Create nunjucks
-let env = createEnv('views', {
+// Create templating engine
+let env = template('views', {
   watch: true,
   filters: {
     hex: function (n) { // prevent the xss: script injection
@@ -42,28 +18,29 @@ let env = createEnv('views', {
 
 const app = new Koa();
 
-// Loggers
-app.use(async (ctx, next) => {
-  let date = new Date();
-  console.log(`${date.toUTCString()} [${ctx.request.method}] ${ctx.request.url}`);
-  // TODO: Write into logger file
-  await next();
-});
+app.use(logger());
 
 // Routers
 router.all('/', async (ctx, next) => {
-  let html = env.render('index.html', {
-    title: 'W-FTP',
-    files: [
-      {filename: 'file', time: '2018-01-01 16:44:50'},
-      {filename: 'file', time: '2018-01-01 16:44:50'},
-      {filename: 'file', time: '2018-01-01 16:44:50'},
-    ]
+  let userFiles = [];
+  fs.readdirSync('./files').forEach((file) => {
+    let stats = fs.statSync('./files/' + file);
+    userFiles.push({
+      filename: file,
+      time: stats.mtime.toUTCString().split(' GMT')[0],
+      size: stats.size / 1000 + 'KB',
+      icon: ''
+    });
   });
-  ctx.body = html;
+
+  ctx.body = env.render('index.html', {
+    title: 'W-FTP',
+    files: userFiles,
+  });
   await next();
 });
 
+// Static router
 router.get('/static/*', serve('./static'));
 
 // Add router middleware
