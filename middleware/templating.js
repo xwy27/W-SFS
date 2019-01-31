@@ -27,4 +27,18 @@ function createEnv(path, opts) {
   return env;
 }
 
-module.exports = createEnv;
+const env = createEnv('views', {
+  watch: true,
+  filters: {
+    hex: function (n) { // prevent the xss: script injection
+      return '0x' + n.toString(16);
+    }
+  }
+});
+
+function template() {
+  // Create templating engine
+  return env;
+}
+
+module.exports = template;

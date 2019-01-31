@@ -55,8 +55,8 @@
         <td class="center aligned">{{ file.time }}</td>
         <td class="center aligned">{{ file.size }}</td>
         <td class="center aligned">
-          <div class="ui blue button">Download</div>
-          <div class="ui red button">Delete</div>
+          <div class="ui blue button download" data-filename="{{ file.filename }}">Download</div>
+          <div class="ui red button delete">Delete</div>
         </td>
       </tr>
       {% else %}

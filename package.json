@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/w-ftp/web-client#readme",
   "dependencies": {
-    "koa": "2.0.0",
-    "koa-router": "7.0.0",
+    "koa": "^2.2.0",
+    "koa-router": "^7.2.0",
     "nunjucks": "2.4.2",
-    "koa2-static-middleware": "^1.0.3"
+    "koa2-static-middleware": "^1.0.3",
+    "koa-send": "^4.1.0"
   }
 }

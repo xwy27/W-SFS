@@ -13,4 +13,9 @@ $('.icon').on('click', (ele) => {
   }
 });
 
+$('.download').on('click', function() {
+  let filename = this.getAttribute('data-filename');
+  window.open('/download/' + filename, '_blank');
+});
+
 $('table').tablesort();
