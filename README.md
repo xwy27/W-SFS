@@ -1,2 +1,3 @@
-# web-client
-Web client for w-ftp
+# W-SFS
+
+Web based Static File Service, helps transforming small files without USB.
