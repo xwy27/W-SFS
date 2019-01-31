@@ -54,6 +54,11 @@ app.use(async (ctx, next) => {
 router.all('/', async (ctx, next) => {
   let html = env.render('index.html', {
     title: 'W-FTP',
+    files: [
+      {filename: 'file', time: '2018-01-01 16:44:50'},
+      {filename: 'file', time: '2018-01-01 16:44:50'},
+      {filename: 'file', time: '2018-01-01 16:44:50'},
+    ]
   });
   ctx.body = html;
   await next();

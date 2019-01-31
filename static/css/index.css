@@ -1,32 +1,41 @@
-html,
-body,
-#app,
-.el-container {
-  height: 100%;
+/* Title bar */
+#title {
+  margin-bottom: 20px !important;
+  padding-bottom: 20px;
 }
 
-body {
-  margin: 0;
+#title .container {
+  padding-top: 20px;
 }
 
-.el-header,
-.el-footer {
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
+#title .container h1 {
+  font-size: 4em;
+  font-weight: normal;
 }
 
-.el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
+.icon {
+  font-size: 1.5em;
 }
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
+.icon:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
+}
+
+table {
+  margin: auto !important;
+  min-width: 1000px;
+}
+
+table thead tr th {
+  text-align: center !important;
+  font-size: 1.5em;
+}
+
+table thead tr:first-child {
+  font-size: 2em;
+}
+
+table tbody tr td:first-child {
+  font-size: 1.5em;
 }
