@@ -16,7 +16,7 @@ let index = async (ctx, next) => {
   });
 
   ctx.body = template.render('index.html', {
-    title: 'W-FTP',
+    title: 'W-SFS',
     files: userFiles,
   });
   await next();

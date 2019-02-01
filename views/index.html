@@ -10,6 +10,8 @@
   <!-- Source Library -->
   <!-- jQuery -->
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- Semantic -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
@@ -22,9 +24,9 @@
   <div id="title" class="ui inverted vertical masthead center aligned segment">
     <div class="ui text container">
       <h1 class="ui inverted header">
-        W-FTP
+        {{ title }}
       </h1>
-      <h2>Light, convenient, web based FTP</h2>
+      <h2>Light, convenient, web based Static File Service</h2>
       <div class="ui centered grid icons">
         <div class="one wide column">
           <i class="github icon"></i>
@@ -56,7 +58,7 @@
         <td class="center aligned">{{ file.size }}</td>
         <td class="center aligned">
           <div class="ui blue button download" data-filename="{{ file.filename }}">Download</div>
-          <div class="ui red button delete">Delete</div>
+          <div class="ui red button delete" data-filename="{{ file.filename }}">Delete</div>
         </td>
       </tr>
       {% else %}
