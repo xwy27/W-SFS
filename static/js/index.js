@@ -35,5 +35,34 @@ $('.delete').on('click', function() {
     });
 });
 
+// Upload modal
+$('.upload-modal').on('click', function() {
+  $('#file-list').html('<div class="item">No files...</div>');
+  $('.modal').modal('show');
+});
+
+// Chosen files
+$('#file').on('change', function() {
+  let files = $(this)[0].files;
+  // console.log(files);
+  if (files.length > 0) {
+    let html = ``;
+    for (var file of files) {
+      html += `<div class='item'><i class="file icon"></i>${file.name}</div>`;
+    }
+    $('#file-list').html(html);
+  }
+});
+
+// Upload button
+// $('.upload').on('click', function() {
+//   let files = $('#file-upload').files;
+//   if (files.length > 0) {
+
+//   } else {
+//     $('.modal').modal('hide');
+//   }
+// });
+
 // List Sort
 $('table').tablesort();

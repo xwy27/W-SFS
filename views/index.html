@@ -26,7 +26,7 @@
       <h1 class="ui inverted header">
         {{ title }}
       </h1>
-      <h2>Light, convenient, web based Static File Service</h2>
+      <h2>{{ intro }}</h2>
       <div class="ui centered grid icons">
         <div class="one wide column">
           <i class="github icon"></i>
@@ -70,13 +70,30 @@
     <tfoot class="full-width">
       <tr>
         <th colspan="4">
-          <div class="ui green right floated small button">
-            Upload File
-          </div>
+          <div class="ui green right floated small button upload-modal">Upload</div>
         </th>
       </tr>
     </tfoot>
   </table>
+
+  <!-- Upload Modal -->
+  <div class="ui basic modal">
+    <div class="ui centered align header">Upload Files</div>
+  <div class="content">
+    <form class="ui form" action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+      <div class="field">
+        <label for="file" class="ui button custom-file-upload">
+            Choose File
+        </label>
+        <input id="file" type="file" name="file" value="" multiple="multiple"/>
+      </div>
+      <div class="ui list" id="file-list">
+        <div class="item">No files...</div>
+      </div>
+      <button class="ui primary button upload" type="submit">Upload</button>
+    </form>
+  </div>
+  </div>
 </body>
 
 <!-- Custom Library -->

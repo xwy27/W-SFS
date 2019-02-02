@@ -17,6 +17,7 @@ let index = async (ctx, next) => {
 
   ctx.body = template.render('index.html', {
     title: 'W-SFS',
+    intro: 'Light, convenient, web based Static File Service',
     files: userFiles,
   });
   await next();

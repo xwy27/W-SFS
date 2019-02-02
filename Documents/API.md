@@ -49,7 +49,7 @@ Target file
 
     ```json
     data: {
-      msg: ''
+      'msg': ''
     }
     ```
 
@@ -57,7 +57,7 @@ Target file
 
     ```json
     data: {
-      msg: 'File does not exit'
+      'msg': 'File does not exit'
     }
     ```
 
