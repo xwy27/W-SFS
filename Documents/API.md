@@ -68,7 +68,46 @@ Target file
     ```javaScript
     const axios = require('axios');
 
-    axios.post('/download/' + filename, {})
+    axios.post('/delete/' + filename, {})
+      .then(function (res) {
+        // do sth
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+      .then(function () {
+        // code always perform
+      })
+    ```
+
+## Delete
+
+`/upload`
+
+### Type
+
+**POST**
+
+### Data
+
+files, multiform data.
+
+### Response
+
+Redirect to home page
+
+### Example
+
+1. JavaScript
+
+    ```javaScript
+    const axios = require('axios');
+
+    axios.post('/upload', {
+      files: [
+        file: {}
+      ]
+    })
       .then(function (res) {
         // do sth
       })

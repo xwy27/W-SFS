@@ -19,8 +19,9 @@ Under the developing, some middleware are picked:
 
 1. nunjucks
 1. koa-router
-1. koa2-static-middleware
 1. koa-send
+1. koa-body
+1. koa2-static-middleware
 1. koa-bodyparser
 
 For the web page, `Semantic`, which concerned more about page displaying is chosen. However, it is based on `jQuery`, which I'm a little used to. For some reason, I tried `axios` in the project.
