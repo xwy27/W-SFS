@@ -52,7 +52,8 @@
       {% for file in files %}
       <tr>
         <td>
-          <i class="file outline icon"></i>{{ file.filename }}
+          <img class="file-icon" src="/static/image/icons/{{ file.icon }}">
+          <span>{{ file.filename }}</span>
         </td>
         <td class="center aligned">{{ file.time }}</td>
         <td class="center aligned">{{ file.size }}</td>
@@ -79,20 +80,20 @@
   <!-- Upload Modal -->
   <div class="ui basic modal">
     <div class="ui centered align header">Upload Files</div>
-  <div class="content">
-    <form class="ui form" action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
-      <div class="field">
-        <label for="file" class="ui button custom-file-upload">
+    <div class="content">
+      <form class="ui form" action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+        <div class="field">
+          <label for="file" class="ui button custom-file-upload">
             Choose File
-        </label>
-        <input id="file" type="file" name="file" value="" multiple="multiple"/>
-      </div>
-      <div class="ui list" id="file-list">
-        <div class="item">No files...</div>
-      </div>
-      <button class="ui primary button upload" type="submit">Upload</button>
-    </form>
-  </div>
+          </label>
+          <input id="file" type="file" name="file" value="" multiple="multiple" />
+        </div>
+        <div class="ui list" id="file-list">
+          <div class="item">No files...</div>
+        </div>
+        <button class="ui primary button upload" type="submit">Upload</button>
+      </form>
+    </div>
   </div>
 </body>
 

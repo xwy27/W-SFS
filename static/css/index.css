@@ -37,6 +37,15 @@ table tbody tr td:first-child {
   font-size: 1.5em;
 }
 
+.file-icon {
+  width: 24px;
+  margin: 0 5px;
+}
+
+td>span {
+  vertical-align: text-top;
+}
+
 /* Upload modal */
 input[type="file"] {
   display: none;
