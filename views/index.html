@@ -26,13 +26,19 @@
       <h1 class="ui inverted header">
         {{ title }}
       </h1>
-      <h2>{{ intro }}</h2>
+      <p>{{ intro }}</p>
       <div class="ui centered grid icons">
-        <div class="one wide column">
-          <i class="github icon"></i>
+        <div class="row">
+          <div class="wave" data-percentage="{{ size.percentage }}">{{ size.percentage }} %</div>
         </div>
-        <div class="one wide column">
-          <i class="user outline icon"></i>
+        <div class="row size"> {{ size.current }} KB / {{ size.total }} KB </div>
+        <div class="row">
+          <div class="one wide column">
+            <i class="github icon"></i>
+          </div>
+          <div class="one wide column">
+            <i class="user outline icon"></i>
+          </div>
         </div>
       </div>
     </div>

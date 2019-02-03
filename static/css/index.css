@@ -1,3 +1,8 @@
+:root {
+  /* variable for css */
+  --t: 0;
+}
+
 /* Title bar */
 #title {
   margin-bottom: 20px !important;
@@ -5,12 +10,64 @@
 }
 
 #title .container {
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 #title .container h1 {
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: normal;
+}
+
+#title .container p {
+  font-size: 1.25em;
+}
+
+.wave {
+  position: relative;
+  background-color: rgb(118, 218, 255);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  overflow: hidden;
+}
+
+.wave::before,
+.wave::after {
+  content: "";
+  position: absolute;
+  top: var(--t);
+  left: 50%;
+  background: rgba(255, 255, 255, .4);
+  width: 200px;
+  height: 200px;
+  border-radius: 45%;
+  transform: translate(-50%, -70%);
+  animation: rotate 6s linear infinite;
+  z-index: 10;
+}
+
+.wave::after {
+  background: rgba(255, 255, 255, .8);
+  border-radius: 47%;
+  transform: translate(-50%, -70%);
+  animation: rotate 10s linear -5s infinite;
+  z-index: 20;
+}
+
+@keyframes rotate {
+  50% {
+    transform: translate(-50%, -73%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -70%) rotate(360deg);
+  }
+}
+
+.size {
+  padding: 0 !important;
 }
 
 .icon {

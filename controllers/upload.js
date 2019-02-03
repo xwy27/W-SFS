@@ -12,7 +12,7 @@ let upload = async (ctx, next) => {
       reader.pipe(upStream);
       console.log(`[Upload] Save ${file.name} successfully.`);
     }
-  } else {
+  } else if (files.length == 1) {
     console.log(`[Upload] Saving ${files.name}...`);
     const reader = fs.createReadStream(files.path);
     let filePath = path.join(__dirname, '../files/') + `/${files.name}`;

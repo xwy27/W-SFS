@@ -54,15 +54,12 @@ $('#file').on('change', function() {
   }
 });
 
-// Upload button
-// $('.upload').on('click', function() {
-//   let files = $('#file-upload').files;
-//   if (files.length > 0) {
-
-//   } else {
-//     $('.modal').modal('hide');
-//   }
-// });
+// Size percentage
+let percentage = $('.wave').attr('data-percentage'); // range [0, 100]
+percentage = 30 - parseInt(percentage);
+percentage = percentage < -50 ? -50 : percentage;
+console.log(percentage);
+document.documentElement.style.setProperty('--t', percentage + '%');
 
 // List Sort
 $('table').tablesort();
