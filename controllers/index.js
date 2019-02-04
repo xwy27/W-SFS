@@ -3,11 +3,11 @@ const PATH = require('path');
 const getIconForFile = require('vscode-icons-js').getIconForFile;
 
 const template = require('../middleware/templating')();
+const total = require('../setting').sizeLimit;  // file size limit
 
-let index = async (ctx, next) => {
+let index = async ctx => {
   let userFiles = []; // user files info
   let current = 0;  // current file size
-  let total = 1024;  // file size limit
   fs.readdirSync(PATH.resolve(__dirname, '../files')).forEach((file) => {
     let stats = fs.statSync(PATH.resolve(__dirname, '../files/' + file));
     userFiles.push({
@@ -29,9 +29,8 @@ let index = async (ctx, next) => {
     },
     files: userFiles,
   });
-  await next();
 }
 
 module.exports = {
-  'GET /': index
+  'GET /index': index
 }

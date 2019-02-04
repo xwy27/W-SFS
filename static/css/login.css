@@ -1,0 +1,24 @@
+body {
+  background: linear-gradient(0deg, #0b4182 1%, #1e88e5 100%);
+}
+.grid {
+  height: 100%;
+  margin: 0 auto !important;
+}
+
+.grid .column {
+  max-width: 400px;
+  border-radius: 2%;
+  /* border: 1px black solid; */
+  background: rgba(255, 255, 255, 1);
+  padding: 50px !important;
+}
+
+.grid .column .header {
+  font-size: 4em;
+  margin-bottom: 50px !important;
+}
+
+.button {
+  margin-top: 50px !important;
+}

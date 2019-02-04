@@ -17,12 +17,13 @@ Taking light and convenience into consideration, a simple web server is used: `k
 
 Under the developing, some middleware are picked:
 
-1. nunjucks
-1. koa-router
-1. koa-send
 1. koa-body
-1. koa2-static-middleware
-1. koa-bodyparser
+2. koa-bodyparser
+3. koa-router
+4. koa-send
+5. koa-session
+6. koa2-static-middleware
+7. nunjucks
 
 For the web page, `Semantic`, which concerned more about page displaying is chosen. However, it is based on `jQuery`, which I'm a little used to. For some reason, I tried `axios` in the project.
 

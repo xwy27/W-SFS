@@ -1,7 +1,7 @@
 const fs = require('fs');
 const PATH = require('path');
 
-let del = async (ctx, next) => {
+let del = async ctx => {
   let filename = ctx.params.filename;
   console.log('[Delete] Deleting ' + filename + '...');
   let path = PATH.resolve(__dirname, '../files/' + filename);
@@ -14,7 +14,6 @@ let del = async (ctx, next) => {
     console.log('[Delete] Delete ' + filename + ' failed.');
     ctx.body = { msg: filename + 'does not exist.' };
   }
-  await next();
 };
 
 module.exports = {

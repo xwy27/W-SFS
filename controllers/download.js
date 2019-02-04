@@ -1,6 +1,6 @@
 const send = require('koa-send');
 
-let download = async (ctx, next) => {
+let download = async ctx => {
   let filename = ctx.params.filename;
   console.log(`[Download] Downloading ${filename}...`);
   let path = `./files/${filename}`;
