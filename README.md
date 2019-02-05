@@ -1,4 +1,4 @@
-# W-SFS
+# Leggiero
 
 Web based Static File Service, helps transforming small files without USB.
 
@@ -10,6 +10,46 @@ Manage small files with your own server like using a tiny cloud disk.
 1. Download file
 1. Delete file
 1. Upload file
+
+## Dependency
+
+### Server
+
+1. node >= 10.0.0
+2. npm/cnpm
+
+### Client
+
+1. Modern Browser(*Chrome preferred*)
+
+## Usage
+
+1. Clone the repo
+   
+   First, clone the repo from the github.
+   ```bash
+   git clone https://github.com/xwy27/W-SFS.git
+   ```
+2. Set Account
+   
+    Modify `setting.js` at the root dir and set your own account and password.
+    Also the files size limitation can be set. 
+
+    **For any sharing with the repo, make sure your own Account info in `setting.js` is deleted.**
+3. Install Dependency
+
+    ```bash
+    cd S-WFS
+    npm install
+    ```
+4. Start Server
+  
+    ```bash
+    npm start
+    ```
+5. Enjoy
+
+    For local access, you can visit `http://localhost:3000` to enjoy **W-SFS**.
 
 ## Introduction
 

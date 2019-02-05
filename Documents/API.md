@@ -1,5 +1,61 @@
 # API
 
+## Login
+
+`/login`
+
+### Type
+
+**POST**
+
+### Data
+
+```json
+{
+  'user': 'name',
+  'password': 'psd'
+}
+```
+
+### Response
+
+1. Success
+
+    ```json
+    data {
+      'msg': ''
+    }
+    ```
+2. Fail
+
+    ```json
+    data {
+      'msg': 'User Error or Password Error'
+    }
+    ```
+
+### Example
+
+1. JavaScript
+
+    ```javaScript
+    const axios = require('axios');
+
+    axios.post('/login', {
+      user: username,
+      password: password
+    })
+      .then(function (res) {
+        // do sth
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+      .then(function () {
+        // code always perform
+      })
+    ```
+
 ## Download
 
 `/download/:filename`

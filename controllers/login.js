@@ -28,7 +28,7 @@ let login = async ctx => {
 
 let loginPage = async ctx => {
   ctx.body = template.render('login.html', {
-    title: 'W-SFS',
+    title: 'Leggiero',
   });
 }
 

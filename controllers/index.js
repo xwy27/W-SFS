@@ -20,7 +20,7 @@ let index = async ctx => {
   });
 
   ctx.body = template.render('index.html', {
-    title: 'W-SFS',
+    title: 'Leggiero',
     intro: 'Light, Convenient, Web based Static File Service',
     size: {
       current: current,

@@ -13,9 +13,8 @@
   padding-top: 5px;
 }
 
-#title .container h1 {
-  font-size: 3.5em;
-  font-weight: normal;
+#title .container .logo {
+  max-width: 400px;
 }
 
 #title .container p {
