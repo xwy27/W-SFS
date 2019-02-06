@@ -6,7 +6,7 @@ const app = require('./../app');
 const request = supertest(app.listen());
 
 // no-session
-describe('Start test static router', () => {
+describe('Testing static router', () => {
   it('Test request: [GET] /', (done) => {
     request
       .get('/')
@@ -24,7 +24,7 @@ describe('Start test static router', () => {
   });
   
 // login
-describe('Start test login', () => {
+describe('Testing login', () => {
   it('Test request: [POST] /login ~Fail', (done) => {
     request
       .post('/login')
@@ -51,7 +51,7 @@ describe('Start test login', () => {
 });
 
 // session-required
-describe('Start test api', () => {
+describe('Testing api', () => {
   var cookie;
   beforeEach((done) => {
     request
