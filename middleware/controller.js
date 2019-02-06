@@ -2,6 +2,12 @@ const fs = require('fs');
 const PATH = require('path');
 const router = require('koa-router')();
 
+/**
+ * Register the router from the router controller files
+ * 
+ * @param {object} router: koa-router
+ * @param {object} mapping: dictionary defining the router
+ */
 function addMapping(router, mapping) {
   for (var url in mapping) {
     if (url.startsWith('GET ')) {
@@ -18,6 +24,13 @@ function addMapping(router, mapping) {
   }
 }
 
+
+/**
+ * Traverse the controllers folder and find all the
+ * router controller files
+ * 
+ * @param {object} router: koa-router
+ */
 function addControllers(router) {
   let files = fs.readdirSync(PATH.resolve(__dirname, '../controllers'));
   let js_files = files.filter((f) => {

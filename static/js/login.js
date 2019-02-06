@@ -11,6 +11,6 @@ $('.button').on('click', function() {
     }
   })
   .catch(function(err) {
-    console.log(err);
+    console.error(err);
   })
 });

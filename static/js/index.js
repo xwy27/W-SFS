@@ -3,7 +3,7 @@ $('.icon').on('click', (ele) => {
   console.log(ele);
   switch(ele.currentTarget.className.split(' icon')[0]) {
     case('github'):
-      window.location.href = 'https://github.com/xwy27/W-SFS';
+      window.location.href = 'https://github.com/xwy27/leggiero';
       break;
     case('user'):
       window.location.href = 'https://github.com/xwy27';
@@ -58,8 +58,8 @@ $('#file').on('change', function() {
 let percentage = $('.wave').attr('data-percentage'); // range [0, 100]
 percentage = 30 - parseInt(percentage);
 percentage = percentage < -50 ? -50 : percentage;
-console.log(percentage);
-document.documentElement.style.setProperty('--t', percentage + '%');
+// console.log(percentage);
+document.documentElement.style.setProperty('--t', percentage + '%');  // Update size control ui
 
 // List Sort
 $('table').tablesort();

@@ -23,8 +23,8 @@ let index = async ctx => {
     title: 'Leggiero',
     intro: 'Light, Convenient, Web based Static File Service',
     size: {
-      current: current,
-      total: total,
+      current: current.toFixed(3),
+      total: total.toFixed(0),
       percentage: parseInt((current / total) * 100),
     },
     files: userFiles,

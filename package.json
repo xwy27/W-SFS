@@ -1,15 +1,15 @@
 {
-  "name": "web-client",
+  "name": "leggiero",
   "version": "1.0.0",
-  "description": "Web client for w-ftp",
+  "description": "Web based Static File Service, helps transforming small files without USB.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/w-ftp/web-client.git"
+    "url": "git+https://github.com/xwy27/leggiero.git"
   },
   "keywords": [
     "Web",
@@ -19,20 +19,22 @@
   "author": "xwy27",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/w-ftp/web-client/issues"
+    "url": "https://github.com/xwy27/leggiero/issues"
   },
-  "homepage": "https://github.com/w-ftp/web-client#readme",
+  "homepage": "https://github.com/xwy27/leggiero#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "chai": "^4.2.0",
     "js-md5": "^0.7.3",
     "koa": "^2.2.0",
     "koa-body": "^4.0.7",
-    "koa-bodyparser": "^3.2.0",
     "koa-router": "^7.2.0",
     "koa-send": "^4.1.0",
     "koa-session": "^5.10.1",
     "koa2-static-middleware": "^1.0.3",
+    "mocha": "^5.2.0",
     "nunjucks": ">=2.4.3",
+    "supertest": "^3.4.2",
     "vscode-icons-js": "^7.25.2"
   }
 }

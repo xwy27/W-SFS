@@ -37,7 +37,7 @@ const env = createEnv('views', {
 });
 
 function template() {
-  // Create templating engine
+  // Create template engine
   return env;
 }
 

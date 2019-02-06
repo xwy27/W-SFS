@@ -1,4 +1,4 @@
-# Leggiero
+# ![Leggiero](./static/image/logo.png)
 
 Web based Static File Service, helps transforming small files without USB.
 
@@ -28,7 +28,7 @@ Manage small files with your own server like using a tiny cloud disk.
    
    First, clone the repo from the github.
    ```bash
-   git clone https://github.com/xwy27/W-SFS.git
+   git clone https://github.com/xwy27/leggiero.git
    ```
 2. Set Account
    
@@ -39,7 +39,7 @@ Manage small files with your own server like using a tiny cloud disk.
 3. Install Dependency
 
     ```bash
-    cd S-WFS
+    cd leggiero
     npm install
     ```
 4. Start Server
@@ -49,22 +49,23 @@ Manage small files with your own server like using a tiny cloud disk.
     ```
 5. Enjoy
 
-    For local access, you can visit `http://localhost:3000` to enjoy **W-SFS**.
+    For local access, you can visit `http://yourServerIP:3000` to enjoy **leggiero**.
 
 ## Introduction
 
-Taking light and convenience into consideration, a simple web server is used: `koa2`, which is unlike the most website construction - SPA front-end with URL forwarding and back-end server.
+Taking light and convenience into consideration, a simple web server is used: `koa2`, which is unlike the most website construction - SPA front-end with URL forwarding and back-end server providing data.
 
-Under the developing, some middleware are picked:
+Under the developing process, some koa middleware are picked:
 
-1. koa-body
-2. koa-bodyparser
-3. koa-router
-4. koa-send
-5. koa-session
-6. koa2-static-middleware
-7. nunjucks
+1. koa-body:  *parse web request data into json*
+2. koa-router:  *router control*
+3. koa-send:  *server sending file*
+4. koa-session:  *session control*
+5. koa2-static-middleware:  *static file forward*
+6. nunjucks:  *web page template*
 
-For the web page, `Semantic`, which concerned more about page displaying is chosen. However, it is based on `jQuery`, which I'm a little used to. For some reason, I tried `axios` in the project.
+`Semantic`, which concerns more about page displaying and is based on `jQuery` is chosen as the front-end frame work. According to some discussion of `jQuery`, `axios` is used for the web request.
 
-After all, this is a small toy for myself. I tried to modify the code and learn from it. Hope more helpful things can be done to it.
+After all, this is a toy for myself. I tried to modify the code and learn from it. Hope more helpful things can be done to it. 
+
+**Your advice is welcomed.**

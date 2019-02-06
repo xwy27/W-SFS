@@ -1,4 +1,5 @@
 const template = require('../middleware/templating')();
+const log = require('../middleware/logger');
 const u = require('../setting').user;
 const p = require('../setting').password;
 
@@ -11,14 +12,14 @@ let login = async ctx => {
   let user = body.user;
   let password = body.password;
   let date = new Date();
-  if (loginMatch(user, password)) {
-    console.log(`${date.toUTCString()} [Login] [Success] user: ${user}, psd: ${password}`);
+  if (loginMatch(user, password)) { // login success
+    log(`${date.toUTCString()} [Login] [Success] user: ${user}, psd: ${password}`);
     ctx.session.user = user;
     ctx.response.body = {
       msg: ''
     };
-  } else {
-    console.log(`${date.toUTCString()} [Login] [Fail] user: ${user}, psd: ${password}`);
+  } else {  // login fail
+    log(`${date.toUTCString()} [Login] [Fail] user: ${user}, psd: ${password}`);
     ctx.session = null;
     ctx.response.body = {
       msg: 'User Error or Password Error'

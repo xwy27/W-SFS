@@ -10,7 +10,6 @@ body {
 .grid .column {
   max-width: 400px;
   border-radius: 2%;
-  /* border: 1px black solid; */
   background: rgba(255, 255, 255, 1);
   padding: 50px !important;
 }

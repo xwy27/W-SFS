@@ -1,6 +1,5 @@
 const Koa = require('koa');
 const session = require('koa-session');
-const bodyParser = require('koa-bodyparser');
 
 const logger = require('./middleware/logger');
 const body = require('./middleware/body');
@@ -8,7 +7,6 @@ const controller = require('./middleware/controller');
 const u = require('./setting').user;
 
 const app = new Koa();
-
 
 // Add logger middleware
 app.use(logger());
@@ -40,7 +38,7 @@ app.use(async (ctx, next) => {
     if (ctx.session.user && ctx.session.user === u) { // session match
       await next();
     } else {
-      console.log(`[Session] Mismatch.`);
+      log(`[Session] Mismatch.`);
       ctx.redirect('/');
     }
   }
@@ -49,12 +47,11 @@ app.use(async (ctx, next) => {
 // Add body middleware
 app.use(body());
 
-// // Add body parser middleware
-// app.use(bodyParser());
-
 // Add router middleware
 app.use(controller());
 
+module.exports = app;
+
 app.listen(3000, () => {
-  console.log('Serving at port 3000...');
+  console.log('Leggiero is serving at port 3000...');
 });

@@ -1,10 +1,11 @@
 const send = require('koa-send');
+const log = require('../middleware/logger');
 
 let download = async ctx => {
   let filename = ctx.params.filename;
-  console.log(`[Download] Downloading ${filename}...`);
+  log(`[Download] Downloading ${filename}...`);
   let path = `./files/${filename}`;
-  console.log(`[Download] Download ${filename} successfully`);
+  log(`[Download] Download ${filename} successfully`);
   ctx.attachment(path);
   await send(ctx, path);
 }
