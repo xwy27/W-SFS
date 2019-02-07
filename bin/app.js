@@ -4,7 +4,7 @@ const session = require('koa-session');
 const logger = require('./middleware/logger');
 const body = require('./middleware/body');
 const controller = require('./middleware/controller');
-const u = require('./setting').user;
+const u = require('../setting').user;
 
 const app = new Koa();
 

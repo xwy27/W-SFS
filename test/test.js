@@ -1,7 +1,7 @@
 const supertest = require('supertest');
 const chai = require('chai');
 const md5 = require('js-md5');
-const app = require('./../app');
+const app = require('../bin/app');
 
 const request = supertest(app.listen());
 

@@ -5,7 +5,7 @@ const log = require('../middleware/logger');
 let del = async ctx => {
   let filename = ctx.params.filename;
   log('[Delete] Deleting ' + filename + '...');
-  let path = PATH.resolve(__dirname, '../files/' + filename);
+  let path = PATH.resolve(__dirname, '../../files/' + filename);
   if (fs.existsSync(path)) {  // file exist
     fs.unlinkSync(path);
     log('[Delete] Delete ' + filename + ' successfully.');

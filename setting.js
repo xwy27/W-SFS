@@ -1,7 +1,7 @@
 const md5 = require('js-md5');
 
 // Program mode, helps decide the log output file
-const test = false;  // true: test mode; false: online mode
+const test = true;  // true: test mode; false: online mode
 
 // Account information
 const user = '123@mail.com';  // username, any form is ok

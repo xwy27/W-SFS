@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const t = require('../setting').test;
+const t = require('../../setting').test;
 
 // Logger middleware
 function logger(msg) {
   let date = new Date();
-  let logPath = '../logs/' + (t ? 'test.log' : 'server.log');
+  let logPath = '../../logs/' + (t ? 'test.log' : 'server.log');
   if (msg) {
     fs.appendFileSync(
       path.resolve(__dirname, logPath),

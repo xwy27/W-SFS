@@ -1,7 +1,7 @@
 const template = require('../middleware/templating')();
 const log = require('../middleware/logger');
-const u = require('../setting').user;
-const p = require('../setting').password;
+const u = require('../../setting').user;
+const p = require('../../setting').password;
 
 function loginMatch(user, password) {
   return u === user && p === password;

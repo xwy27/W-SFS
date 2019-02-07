@@ -1,4 +1,5 @@
 const nunjucks = require('nunjucks');
+const PATH = require('path');
 
 /**
  * 
@@ -27,7 +28,7 @@ function createEnv(path, opts) {
   return env;
 }
 
-const env = createEnv('views', {
+const env = createEnv(PATH.resolve(__dirname, '../views/'), {
   watch: true,
   filters: {
     hex: function (n) { // prevent the xss: script injection
