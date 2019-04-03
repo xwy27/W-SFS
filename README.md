@@ -1,4 +1,4 @@
-# ![Leggiero](./static/image/logo.png)
+# ![Leggiero](./bin/static/image/logo.png)
 
 Web based Static File Service, helps transforming small files without USB.
 
@@ -69,3 +69,7 @@ Under the developing process, some koa middleware are picked:
 After all, this is a toy for myself. I tried to modify the code and learn from it. Hope more helpful things can be done to it. 
 
 **Your advice is welcomed.**
+
+## Demo Picture
+
+~~Waiting~~
