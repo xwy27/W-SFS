@@ -3,6 +3,7 @@ const session = require('koa-session');
 
 const logger = require('./middleware/logger');
 const body = require('./middleware/body');
+const static = require('./middleware/static');
 const controller = require('./middleware/controller');
 const u = require('../setting').user;
 
@@ -32,13 +33,12 @@ app.use(async (ctx, next) => {
   if (url === '/' || url === '/login') { // login page and login request
     ctx.session.user = null;
     await next();
-  } else if (url.includes('static')) {  // static files
+  } else if (url.includes('js') || url.includes('css') || url.includes('image')) {  // static files
     await next();
   } else { // not login page
     if (ctx.session.user && ctx.session.user === u) { // session match
       await next();
     } else {
-      log(`[Session] Mismatch.`);
       ctx.redirect('/');
     }
   }
@@ -49,6 +49,9 @@ app.use(body());
 
 // Add router middleware
 app.use(controller());
+
+// Add static file handler middleware
+app.use(static());
 
 module.exports = app;
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ title }}</title>
-  <link rel="shortcut icon" href="/static/image/favicon.ico" />
+  <link rel="shortcut icon" href="image/favicon.ico" />
 
   <!-- Source Library -->
   <!-- jQuery -->
@@ -24,7 +24,7 @@
   <!-- Title Bar -->
   <div id="title" class="ui inverted vertical masthead center aligned segment">
     <div class="ui text container">
-      <img class="logo" src="/static/image/logo-invert.png">
+      <img class="logo" src="image/logo-invert.png">
       <!-- <h1 class="ui inverted header">
         {{ title }}
       </h1> -->
@@ -60,7 +60,7 @@
       {% for file in files %}
       <tr>
         <td>
-          <img class="file-icon" src="/static/image/icons/{{ file.icon }}">
+          <img class="file-icon" src="image/icons/{{ file.icon }}">
           <span>{{ file.filename }}</span>
         </td>
         <td class="center aligned">{{ file.time }}</td>
@@ -106,8 +106,8 @@
 </body>
 
 <!-- Custom Library -->
-<script src="/static/js/table-sort.js"></script>
-<script src="/static/js/index.js"></script>
-<link rel="stylesheet" href="/static/css/index.css">
+<script src="js/table-sort.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/index.css">
 
 </html>
