@@ -36,12 +36,12 @@ Manage small files with your own server like using a tiny cloud disk.
     Also the files size limitation can be set. 
 
     **For any sharing with the repo, make sure your own Account info in `setting.js` is deleted.**
-3. Install Dependency
+3. Build Project
 
     ```bash
-    cd leggiero
-    npm install
+    npm run build
     ```
+
 4. Start Server
   
     ```bash
