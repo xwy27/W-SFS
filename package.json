@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/xwy27/leggiero#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "chai": "^4.2.0",
     "js-md5": "^0.7.3",
     "koa": "^2.2.0",
